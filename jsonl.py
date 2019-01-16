@@ -13,9 +13,9 @@ def write_jsonl(obj, outfile):
     outfile.write(json_string+'\n')
 
 
-def parse_jsonl(infile):
+def read_jsonl(infile):
     """
-    Parses a new line delimited file containing json objects
+    Reads a new line delimited file containing json objects
     :param infile: file handler
     :return: json line generator
     """
