@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, mock_open
-from jsonl import write_jsonl, parse_jsonl
+from jsonl import write_jsonl, read_jsonl
 
 
 class TestJSONL(unittest.TestCase):
@@ -19,7 +19,7 @@ class TestJSONL(unittest.TestCase):
         with patch('builtins.open', mock_open()) as mock_file:
             mock_file.return_value.__iter__.return_value = text_file_data.splitlines()
             with open('filename', 'r') as f:
-                actual = list(parse_jsonl(f))
+                actual = list(read_jsonl(f))
         self.assertEqual(expected, actual)
 
 
